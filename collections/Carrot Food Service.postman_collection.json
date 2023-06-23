@@ -1,0 +1,502 @@
+{
+	"info": {
+		"_postman_id": "200b7375-f0bd-42da-a25d-a46029a1cd53",
+		"name": "Carrot Food Service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10886976",
+		"_collection_link": "https://orange-sunset-5821-1.postman.co/workspace/Team-Workspace~9b0cdd11-2926-4261-8cfe-55cf0ee04ba8/collection/10886976-200b7375-f0bd-42da-a25d-a46029a1cd53?action=share&creator=10886976&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Businesses",
+					"item": [
+						{
+							"name": "Restaurants",
+							"item": [
+								{
+									"name": "Menu Items",
+									"item": [
+										{
+											"name": "Get Menu Items",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{access-token}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "http://127.0.0.1:8000/api/v1/restaurants/1/menu-items",
+													"protocol": "http",
+													"host": [
+														"127",
+														"0",
+														"0",
+														"1"
+													],
+													"port": "8000",
+													"path": [
+														"api",
+														"v1",
+														"restaurants",
+														"1",
+														"menu-items"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Create Menu Item",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{access-token}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"name\": \"Fufu\",\n    \"description\": \"Fufu with goat meat and okro stew\",\n    \"unit\": \"PX\",\n    \"size\": \"MEDIUM\",\n    \"quantity\": 100,\n    \"cost_price\": 50.0,\n    \"selling_price\": 70.0\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "http://127.0.0.1:8000/api/v1/restaurants/1/menu-items",
+													"protocol": "http",
+													"host": [
+														"127",
+														"0",
+														"0",
+														"1"
+													],
+													"port": "8000",
+													"path": [
+														"api",
+														"v1",
+														"restaurants",
+														"1",
+														"menu-items"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "Orders",
+									"item": [
+										{
+											"name": "Create Order",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{access-token}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"order_date\": \"2023-06-23 12:13:00\",\n    \"delivery_type\": \"DELIVERY\",\n    \"delivery_location\": \"Accra\",\n    \"payment_mode\": \"CASH\",\n    \"total_items\": 2,\n    \"total_order_price\": 100.0,\n    \"customer_id\": 1\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "http://127.0.0.1:8000/api/v1/restaurants/1/orders",
+													"protocol": "http",
+													"host": [
+														"127",
+														"0",
+														"0",
+														"1"
+													],
+													"port": "8000",
+													"path": [
+														"api",
+														"v1",
+														"restaurants",
+														"1",
+														"orders"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Get Orders By Restaurant",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{access-token}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "http://127.0.0.1:8000/api/v1/restaurants/1/orders",
+													"protocol": "http",
+													"host": [
+														"127",
+														"0",
+														"0",
+														"1"
+													],
+													"port": "8000",
+													"path": [
+														"api",
+														"v1",
+														"restaurants",
+														"1",
+														"orders"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Get Order By Customer",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{access-token}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "http://127.0.0.1:8000/api/v1/users/1/orders",
+													"protocol": "http",
+													"host": [
+														"127",
+														"0",
+														"0",
+														"1"
+													],
+													"port": "8000",
+													"path": [
+														"api",
+														"v1",
+														"users",
+														"1",
+														"orders"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "Get Restaurants",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access-token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/v1/businesses/1/restaurants",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"v1",
+												"businesses",
+												"1",
+												"restaurants"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Create Restaurant",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{access-token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"name\": \"KFC\",\n    \"description\": \"KFC Restaurants\",\n    \"location\": \"Accra\",\n    \"phone_number\": \"0209366367\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://127.0.0.1:8000/api/v1/businesses/1/restaurants",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"v1",
+												"businesses",
+												"1",
+												"restaurants"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Get Businesses",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access-token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/users/1/businesses",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"1",
+										"businesses"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Business",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access-token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"KFC\",\n    \"description\": \"KFC Business\",\n    \"location\": \"Accra\",\n    \"phone_number\": \"0209366367\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/v1/users/1/businesses",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"1",
+										"businesses"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"first_name\": \"Okafor\",\n    \"middle_name\": \"\",\n    \"last_name\": \"Pontian\",\n    \"email\": \"chuks@gmail.com\",\n    \"phone_number\": \"0209366367\",\n    \"address\": \"Accra\",\n    \"password\": \"\",\n    \"type\": \"BUSINESS_OWNER\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/user-create",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"user-create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"chuks@gmail.com\",\n    \"password\": \"1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/user-login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"user-login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/users",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "access-token",
+			"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3YxL3VzZXItbG9naW4iLCJpYXQiOjE2ODc0NzgxNDAsImV4cCI6MTY4NzQ4MTc0MCwibmJmIjoxNjg3NDc4MTQwLCJqdGkiOiI3UWxjdUxJdVpMeDdXRnBCIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.3WnHpoH0rmf4ytBiXVCPxweyCdWUKt9CbTeIbu9Kd9o"
+		}
+	]
+}
